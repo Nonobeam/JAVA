@@ -20,10 +20,10 @@ public class Users {
     private String name;
     private Integer age;
     private String email;
-    private String alumniCode;
-
-    public static String alumniCode(String name, Integer age, Integer alumniCode){
-        String yearBirth = Integer.toString(age);
-        return yearBirth + name + alumniCode;
-    }
+//    private String alumniCode;
+//
+//    public static String alumniCode(String name, Integer age, Integer alumniCode){
+//        String yearBirth = Integer.toString(age);
+//        return yearBirth + name + alumniCode;
+//    }
 }

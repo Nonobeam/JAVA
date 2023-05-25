@@ -34,7 +34,7 @@ public class UserServiceInterface implements UserService{
         UpdateDB.setName(user.getName());
         UpdateDB.setAge(user.getAge());
         UpdateDB.setEmail(user.getEmail());
-        UpdateDB.setAlumniCode(user.getAlumniCode());
+//        UpdateDB.setAlumniCode(user.getAlumniCode());
 
         return userRepository.save(UpdateDB);
     }
