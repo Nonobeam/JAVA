@@ -14,7 +14,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public Users create(Users user){
+    public Users create(@RequestBody Users user){
         return userService.create(user);
     }
 
@@ -28,7 +28,7 @@ public class UserController {
         return userService.update(id, user);
     }
 
-    @GetMapping
+    @GetMapping("/allAlumni")
     public Iterable<Users> findAll(){
         return userService.findAll();
     }
