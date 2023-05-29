@@ -1,9 +1,0 @@
-## We develop the project by Java
-language: java
-
-## Do the tests
-script: mvn clean test
-
-## We have specified the JDK as v8 in Maven pom.xml
-jdk:
-  - openjdk11
