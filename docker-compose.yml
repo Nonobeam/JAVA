@@ -1,12 +1,13 @@
-version: '3.3'
+version: '3.1'
 services:
-  mysql:
-    build:
-      context: /home/mssql
-      args:
-        - MYSQL_DATABASE=${MYSQL_DATABASE}
-        - MYSQL_USER=${MYSQL_USER}
-        - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-        - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+  adminer:
+    image: adminer
+    restart: always
     ports:
-      - "${MYSQL_PORT}:3306"
+      - 3306:3306
