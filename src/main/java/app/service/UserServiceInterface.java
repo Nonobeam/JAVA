@@ -1,10 +1,13 @@
 package app.service;
 
 
-import app.model.Users;
+import app.model.Student;
 import app.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Service
@@ -12,7 +15,7 @@ public class UserServiceInterface implements UserService{
     @Autowired
     private UserRepository userRepository;
     @Override
-    public Users create(Users user) {
+    public Student create(Student user) {
         if (user.getEmail() == null || user.getEmail().isEmpty()) {
             return null;
         }
@@ -23,8 +26,8 @@ public class UserServiceInterface implements UserService{
     }
 
     @Override
-    public Users update(Long id, Users user) {
-        Users UpdateDB = userRepository.findById(id).orElse(null);
+    public Student update(Long id, Student user) {
+        Student UpdateDB = userRepository.findById(id).orElse(null);
         if (UpdateDB == null){
             return null;
         }
@@ -32,7 +35,6 @@ public class UserServiceInterface implements UserService{
         UpdateDB.setName(user.getName());
         UpdateDB.setAge(user.getAge());
         UpdateDB.setEmail(user.getEmail());
-//        UpdateDB.setAlumniCode(user.getAlumniCode());
 
         return userRepository.save(UpdateDB);
     }
@@ -43,13 +45,20 @@ public class UserServiceInterface implements UserService{
     }
 
     @Override
-    public Iterable<Users> findAll() {
+    public Iterable<Student> findAll() {
         return userRepository.findAll();
     }
 
     @Override
-    public Users findById(Long id) {
+    public Student findById(Long id) {
         return userRepository.findById(id).orElse(null);
     }
 
+//    @Override
+//    public Iterable<Student> findByBranch(String branch) {
+//        List<Student> students = new ArrayList<>();
+//        for(Student student: students){
+//            userRepository.
+//        }
+//    }
 }

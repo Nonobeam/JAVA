@@ -1,7 +1,7 @@
 package app.controller;
 
 
-import app.model.Users;
+import app.model.Student;
 import app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ public class UserController {
 	private UserService userService;
 
 	@PostMapping
-	public Users create(@RequestBody Users user){
+	public Student create(@RequestBody Student user){
 		return userService.create(user);
 	}
 
@@ -24,17 +24,22 @@ public class UserController {
 	}
 
 	@PutMapping("/{id}")
-	public Users update(@PathVariable Long id, @RequestBody Users user) {
+	public Student update(@PathVariable Long id, @RequestBody Student user) {
 		return userService.update(id, user);
 	}
 
 	@GetMapping("/allAlumni")
-	public Iterable<Users> findAll(){
+	public Iterable<Student> findAll(){
+		return userService.findAll();
+	}
+
+	@GetMapping("/allAlumni")
+	public Iterable<Student> findByBranch(){
 		return userService.findAll();
 	}
 
 	@GetMapping("/{id}")
-	public Users findById (@PathVariable Long id) {
+	public Student findById (@PathVariable Long id) {
 		return userService.findById(id);
 	}
 }
