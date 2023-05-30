@@ -46,12 +46,6 @@ public class Users { //id
 	}
 
 	public void setEmail(String email) {
-		try{
-			if (email.matches("/^\\S+@\\S+\\.\\S+$/")) {
-				this.email = email;
-			}
-		}catch (Exception e){
-			System.out.println("Email nhap vao sai");
-		}
+		this.email = email;
 	}
 }
