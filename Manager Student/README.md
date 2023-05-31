@@ -7,7 +7,7 @@ $ docker-compose up -d
 <br/>
 <br/>
 
-![PHPMYADMIN](mics/phpmyadmin.png)
+![PHPMYADMIN](misc/phpmyadmin.png)
 
 <br/>
 <br/>
