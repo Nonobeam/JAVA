@@ -1,4 +1,4 @@
-To launch our database, we can run an up command from our command line:<br/>
+To launch our database, we can run a docker-compose command:<br/>
 (With -d for enable detached mode)
 
 ```
