@@ -1,0 +1,12 @@
+name: "On Push"
+on: 
+  push:
+    branches: 
+      - "main"
+jobs:
+  Plan:
+    uses: fptudsc/fptu-dsc-terraform-workflow-shared/.github/workflows/terraform-apply.yaml@main
+    secrets: inherit
+    with:
+          terraform-version: 1.4.6
+          deploy_environment: deployment
