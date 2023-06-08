@@ -1,4 +1,4 @@
-To launch our database, we can run a docker-compose command:<br/>
+To launch our database, we can run an up command from our command line:<br/>
 (With -d for enable detached mode)
 
 ```
@@ -12,4 +12,6 @@ $ docker-compose up -d
 <br/>
 <br/>
 And down here is the link to Swagger-ui when you connect successful.<br/>
-[Swagger-ui](http://localhost:8080/swagger-ui/index.html#/)
+[Swagger-ui](http://localhost:8080/swagger-ui/index.html#/)<br/>
+
+![SWAGGER](misc/swagger-ui.png)
