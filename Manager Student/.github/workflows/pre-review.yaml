@@ -1,0 +1,11 @@
+name: "Pull Request Review"
+on: 
+  pull_request:
+    branches: 
+      - "main"
+jobs:
+  Plan:
+    uses: fptudsc/fptu-dsc-terraform-workflow-shared/.github/workflows/terraform-pr-review.yaml@main
+    secrets: inherit
+    with:
+          terraform-version: 1.4.6
